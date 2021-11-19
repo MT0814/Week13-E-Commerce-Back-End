@@ -23,7 +23,7 @@ router.get('/', (req, res) => {
 // get one product
 router.get('/:id', (req, res) => {
   // find a single product by its `id`
-  Produtc.findOne({
+  Product.findOne({
     where: { id: req.params.id },
     // be sure to include its associated Category and Tag data
     includes: [Category, Tag]
@@ -113,7 +113,7 @@ router.put('/:id', (req, res) => {
 
 router.delete('/:id', (req, res) => {
   // delete one product by its `id` value
-  Product.delete({
+  Product.destroy({
     where: { id: req.params.id }
 
   })
